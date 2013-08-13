@@ -2,9 +2,10 @@ Ext.define('cf.view.Main', {
     extend: 'Ext.container.Container',
     requires:[
         'Ext.tab.Panel',
-        'Ext.layout.container.Border'
+        'Ext.layout.container.Border',
+        'cf.view.ListaUsuarios'
     ],
-    
+
     xtype: 'app-main',
 
     layout: {
@@ -12,15 +13,7 @@ Ext.define('cf.view.Main', {
     },
 
     items: [{
-        region: 'west',
-        xtype: 'panel',
-        title: 'west',
-        width: 150
-    },{
         region: 'center',
-        xtype: 'tabpanel',
-        items:[{
-            title: 'Center Tab 1'
-        }]
+        xtype: 'listausuarios'
     }]
 });
