@@ -21,6 +21,16 @@ Ext.define('cf.view.ListaUsuarios', {
         }
     ],
 
+    dockedItems: [{
+        xtype: 'toolbar',
+        dock: 'top',
+        items: [{
+            text: 'Criar',
+            name: 'criar-usuario',
+            icon: 'https://cdn1.iconfinder.com/data/icons/prettyoffice/16/add1-.png'
+        }]
+    }],
+
 
     initComponent: function () {
         this.store = Ext.create('cf.store.Usuarios');

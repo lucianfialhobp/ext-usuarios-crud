@@ -8,7 +8,7 @@ Ext.define('cf.Application', {
     ],
 
     controllers: [
-        // TODO: add controllers here
+        'Main'
     ],
 
     stores: [
