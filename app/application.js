@@ -4,7 +4,7 @@ Ext.define('cf.Application', {
     extend: 'Ext.app.Application',
 
     views: [
-        // TODO: add views here
+        
     ],
 
     controllers: [
@@ -12,6 +12,6 @@ Ext.define('cf.Application', {
     ],
 
     stores: [
-        // TODO: add stores here
+        
     ]
 });
