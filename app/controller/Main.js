@@ -21,9 +21,14 @@ Ext.define('cf.controller.Main', {
                 click: this.criarUsuario
             },
 
+            'listausuarios button[name="remover-usuario"]':{
+                click: this.excluiUsuario
+            },
+
             'formusuario button[name="salvar-formulario"]': {
                 click: this.salvarFormulario
             }
+
         });
 
     },
@@ -31,7 +36,12 @@ Ext.define('cf.controller.Main', {
     criarUsuario: function () {
         Ext.create('cf.view.WindowFormUsuario').show();
     },
+    excluiUsuario: function (btn) {
+        var itemSelected = this.getListaUsuarios().getSelectionModel().getSelection()[0];
+        var store = this.getListaUsuarios().getStore();
 
+        store.remove(itemSelected);
+    },
     salvarFormulario: function (btn) {
         var values = btn.up('form').getForm().getValues();
         var store = this.getListaUsuarios().getStore();

@@ -24,11 +24,18 @@ Ext.define('cf.view.ListaUsuarios', {
     dockedItems: [{
         xtype: 'toolbar',
         dock: 'top',
-        items: [{
-            text: 'Criar',
-            name: 'criar-usuario',
-            icon: 'https://cdn1.iconfinder.com/data/icons/prettyoffice/16/add1-.png'
-        }]
+        items: [
+            {
+                text: 'Criar',
+                name: 'criar-usuario',
+                icon: 'https://cdn1.iconfinder.com/data/icons/prettyoffice/16/add1-.png'
+            },
+            {
+                text: 'Remover',
+                name: 'remover-usuario',
+                icon: 'https://cdn1.iconfinder.com/data/icons/oxygen/16x16/actions/list-remove.png'
+            }
+        ]
     }],
 
 
