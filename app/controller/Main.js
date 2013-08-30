@@ -26,7 +26,8 @@ Ext.define('cf.controller.Main', {
             },
 
             'formusuario button[name="salvar-formulario"]': {
-                click: this.salvarFormulario
+                click: this.salvar
+                
             }
 
         });
@@ -42,10 +43,25 @@ Ext.define('cf.controller.Main', {
 
         store.remove(itemSelected);
     },
-    salvarFormulario: function (btn) {
-        var values = btn.up('form').getForm().getValues();
-        var store = this.getListaUsuarios().getStore();
+    
+    executaForm: function(btn){
+        
+        // salvarFormulario(btn);
+        // resetaFormulario(btn);
+    },
 
-        store.add(values);
+    salvarFormulario: function (btn) {
+        var form =  btn.up('form').getForm();
+        if (form.isValid()) {
+            var values = form.getValues();
+            var store = this.getListaUsuarios().getStore();
+
+            store.add(values);
+        }
+    },
+
+    resetaFormulario: function(btn){
+        var formReseta = btn.up('form').getForm();
+        formReseta.reset();
     }
 });

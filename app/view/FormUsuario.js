@@ -3,32 +3,41 @@ Ext.define('cf.view.FormUsuario', {
 
     xtype: 'formusuario',
 
+    title: 'Cadastro de usuários',
+
     bodyStyle: {
         background: 'transparent'
     },
+    
+    trackResetOnLoad: true,
 
     border: 0,
 
     padding: 5,
+    
     defaults:{
         width: 300,
         margin: '5 0 0 10'  
     },
+
     items: [
         {
             xtype: 'textfield',
             name: 'nome',
             fieldLabel: 'Nome',
+            allowBlank: false
         },
         {
             xtype: 'numberfield',
             name: 'age',
             fieldLabel: 'Idade',
+            allowBlank: false
         },
         {
             xtype: 'textfield',
             name: 'phone',
             fieldLabel: 'Telefone',
+            allowBlank: false
         },
         {
             xtype: 'fieldcontainer',
@@ -61,7 +70,15 @@ Ext.define('cf.view.FormUsuario', {
         {
             xtype: 'button',
             text: 'Salvar',
-            name: 'salvar-formulario'
+            name: 'salvar-formulario',
+            width: 150
+        },
+        {
+            xtype: 'button',
+            text: 'Cancelar',
+            name: 'cancelar-window',
+            width: 150,
+            
         }
     ]
 });
