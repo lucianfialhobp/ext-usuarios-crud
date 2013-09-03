@@ -88,7 +88,7 @@ Ext.define('cf.view.FormCarona', {
         {
             xtype: 'button',
             text: 'Salvar',
-            name: 'salvar-formulario',
+            name: 'salvar-carona',
             width: 150
         },
         {

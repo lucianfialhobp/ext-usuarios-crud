@@ -17,15 +17,15 @@ Ext.define('cf.controller.Main', {
     init: function () {
         
         this.control({
-            'listacaronas button[name="criar-usuario"]': {
+            'listacaronas button[name="criar-carona"]': {
                 click: this.criarUsuario
             },
 
-            'listacaronas button[name="remover-usuario"]':{
+            'listacaronas button[name="remover-carona"]':{
                 click: this.excluiUsuario
             },
 
-            'formcaronas button[name="salvar-formulario"]': {
+            'formcaronas button[name="salvar-carona"]': {
                 click: this.salvarFormulario
                 
             },
@@ -40,24 +40,19 @@ Ext.define('cf.controller.Main', {
     criarUsuario: function () {
         Ext.create('cf.view.WindowFormCarona').show();
     },
+    
     excluiUsuario: function (btn) {
-        var itemSelected = this.getListaUsuarios().getSelectionModel().getSelection()[0];
-        var store = this.getListaUsuarios().getStore();
+        var itemSelected = this.getListaCaronas().getSelectionModel().getSelection()[0];
+        var store = this.getListaCaronas().getStore();
 
         store.remove(itemSelected);
-    },
-    
-    executaForm: function(btn){
-        
-        // salvarFormulario(btn);
-        // resetaFormulario(btn);
     },
 
     salvarFormulario: function (btn) {
         var form =  btn.up('form').getForm();
         if (form.isValid()) {
             var values = form.getValues();
-            var store = this.getListaUsuarios().getStore();
+            var store = this.getCaronas().getStore();
 
             store.add(values);
         }

@@ -47,13 +47,13 @@ Ext.define('cf.view.ListaCaronas', {
         dock: 'top',
         items: [
             {
-                text: 'Criar',
-                name: 'criar-usuario',
+                text: 'Criar carona',
+                name: 'criar-carona',
                 icon: 'https://cdn1.iconfinder.com/data/icons/prettyoffice/16/add1-.png'
             },
             {
                 text: 'Remover',
-                name: 'remover-usuario',
+                name: 'remover-carona',
                 icon: 'https://cdn1.iconfinder.com/data/icons/oxygen/16x16/actions/list-remove.png'
             }
         ]
