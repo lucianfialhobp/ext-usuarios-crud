@@ -1,18 +1,20 @@
-Ext.define('cf.view.WindowFormUsuario', {
+Ext.define('cf.view.WindowFormCarona', {
     extend: 'Ext.window.Window',
 
     requires: [
-        'cf.view.FormUsuario'
+        'cf.view.FormCarona'
     ],
 
-    xtype: 'windowformusuario',
+    xtype: 'windowformcarona',
 
     modal: true,
 
+    title: 'Cadastro de carona',
+    
     initComponent: function () {
 
         this.items = [{
-            xtype: 'formusuario'
+            xtype: 'formcarona'
         }];
 
         this.callParent(arguments);

@@ -2,32 +2,35 @@ Ext.define('cf.controller.Main', {
     extend: 'Ext.app.Controller',
 
     stores: [
-        'Usuarios'
+        'Caronas'
     ],
 
     requires: [
-        'cf.view.WindowFormUsuario'
+        'cf.view.WindowFormCarona'
     ],
 
     refs: [{
-        ref: 'ListaUsuarios',
-        selector: 'listausuarios'
+        ref: 'ListaCaronas',
+        selector: 'listacaronas'
     }],
 
     init: function () {
         
         this.control({
-            'listausuarios button[name="criar-usuario"]': {
+            'listacaronas button[name="criar-usuario"]': {
                 click: this.criarUsuario
             },
 
-            'listausuarios button[name="remover-usuario"]':{
+            'listacaronas button[name="remover-usuario"]':{
                 click: this.excluiUsuario
             },
 
-            'formusuario button[name="salvar-formulario"]': {
-                click: this.salvar
+            'formcaronas button[name="salvar-formulario"]': {
+                click: this.salvarFormulario
                 
+            },
+            'formcaronas button[name="cancelar-window"]': {
+                click: this.fecharFormulario
             }
 
         });
@@ -35,7 +38,7 @@ Ext.define('cf.controller.Main', {
     },
 
     criarUsuario: function () {
-        Ext.create('cf.view.WindowFormUsuario').show();
+        Ext.create('cf.view.WindowFormCarona').show();
     },
     excluiUsuario: function (btn) {
         var itemSelected = this.getListaUsuarios().getSelectionModel().getSelection()[0];
@@ -63,5 +66,10 @@ Ext.define('cf.controller.Main', {
     resetaFormulario: function(btn){
         var formReseta = btn.up('form').getForm();
         formReseta.reset();
+    },
+
+    fecharFormulario: function(btn){
+        var closeForm = btn.up('window');
+        closeForm.hide();
     }
 });

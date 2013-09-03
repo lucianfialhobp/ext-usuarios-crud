@@ -3,7 +3,7 @@ Ext.define('cf.view.Main', {
     requires:[
         'Ext.tab.Panel',
         'Ext.layout.container.Border',
-        'cf.view.ListaUsuarios'
+        'cf.view.ListaCaronas'
     ],
 
     xtype: 'app-main',
@@ -14,6 +14,6 @@ Ext.define('cf.view.Main', {
 
     items: [{
         region: 'center',
-        xtype: 'listausuarios'
+        xtype: 'listacaronas'
     }]
 });
